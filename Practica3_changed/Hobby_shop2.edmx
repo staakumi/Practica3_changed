@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Hobby_shopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Hobby_shop.dbo.Shop_Employees_ProductsView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Shop_Employees_ProductsView">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Фамилия сотрудника" />
+            <PropertyRef Name="Имя сотрудника" />
+            <PropertyRef Name="Отчество сотрудника" />
+            <PropertyRef Name="Возраст сотрудника" />
+            <PropertyRef Name="Название товара" />
+            <PropertyRef Name="Цена товара в рублях" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Фамилия сотрудника" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Имя сотрудника" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Отчество сотрудника" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Возраст сотрудника" Type="int" Nullable="false" />
+          <Property Name="Название товара" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Цена товара в рублях" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище Hobby_shopModelContainer">
+          <EntitySet Name="Shop_Employees_ProductsView" EntityType="Self.Shop_Employees_ProductsView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Shop_Employees_ProductsView].[ID] AS [ID], 
+    [Shop_Employees_ProductsView].[Фамилия сотрудника] AS [Фамилия сотрудника], 
+    [Shop_Employees_ProductsView].[Имя сотрудника] AS [Имя сотрудника], 
+    [Shop_Employees_ProductsView].[Отчество сотрудника] AS [Отчество сотрудника], 
+    [Shop_Employees_ProductsView].[Возраст сотрудника] AS [Возраст сотрудника], 
+    [Shop_Employees_ProductsView].[Название товара] AS [Название товара], 
+    [Shop_Employees_ProductsView].[Цена товара в рублях] AS [Цена товара в рублях]
+    FROM [dbo].[Shop_Employees_ProductsView] AS [Shop_Employees_ProductsView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Hobby_shopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Shop_Employees_ProductsView">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Фамилия_сотрудника" />
+            <PropertyRef Name="Имя_сотрудника" />
+            <PropertyRef Name="Отчество_сотрудника" />
+            <PropertyRef Name="Возраст_сотрудника" />
+            <PropertyRef Name="Название_товара" />
+            <PropertyRef Name="Цена_товара_в_рублях" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Фамилия_сотрудника" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Имя_сотрудника" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Отчество_сотрудника" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Возраст_сотрудника" Type="Int32" Nullable="false" />
+          <Property Name="Название_товара" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Цена_товара_в_рублях" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Hobby_shopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Shop_Employees_ProductsView" EntityType="Self.Shop_Employees_ProductsView" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Hobby_shopModelContainer" CdmEntityContainer="Hobby_shopEntities">
+          <EntitySetMapping Name="Shop_Employees_ProductsView">
+            <EntityTypeMapping TypeName="Hobby_shopModel.Shop_Employees_ProductsView">
+              <MappingFragment StoreEntitySet="Shop_Employees_ProductsView">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Фамилия_сотрудника" ColumnName="Фамилия сотрудника" />
+                <ScalarProperty Name="Имя_сотрудника" ColumnName="Имя сотрудника" />
+                <ScalarProperty Name="Отчество_сотрудника" ColumnName="Отчество сотрудника" />
+                <ScalarProperty Name="Возраст_сотрудника" ColumnName="Возраст сотрудника" />
+                <ScalarProperty Name="Название_товара" ColumnName="Название товара" />
+                <ScalarProperty Name="Цена_товара_в_рублях" ColumnName="Цена товара в рублях" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
